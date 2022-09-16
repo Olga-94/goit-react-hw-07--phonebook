@@ -4,14 +4,16 @@ import { nanoid } from 'nanoid';
 import { Label, Button}  from './Form.styled';
 import { Formik, Field, Form } from 'formik';
 import { useDispatch } from 'react-redux';
-import contactsActions from '../../redux/actions';
+// import contactsActions from '../../redux/actions';
+import { operations } from 'redux/index-export';
 
 export const BaseForm = () => {
   const dispatch = useDispatch();
+  // const contacts = useSelector(selectors.getContacts)
 
   const addContact = (values, { resetForm }) => {
     values.id = nanoid();
-    dispatch(contactsActions.addContact(values.name, values.number));
+    dispatch(operations.addContact({name: values.name, number: values.number}));
     resetForm();
   };
   

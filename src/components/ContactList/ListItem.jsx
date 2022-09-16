@@ -3,7 +3,7 @@ import { FiPhone } from 'react-icons/fi';
 import { AiFillDelete } from 'react-icons/ai';
 import { ListItem, Button } from './contactList.styled';
 import { useDispatch } from 'react-redux';
-import contactsActions from '../../redux/actions';
+import { deleteContact } from 'redux/operations';
 
 export const ContactListItem = ({id, name, number}) => {
   const dispatch = useDispatch();  
@@ -11,7 +11,7 @@ export const ContactListItem = ({id, name, number}) => {
         <ListItem key={id}>
           <FiPhone />
           {name}: {number}
-          <Button onClick={() => dispatch(contactsActions.deleteContact(id))}>
+          <Button onClick={() => dispatch(deleteContact(id))}>
             <AiFillDelete />
             Delete
           </Button>

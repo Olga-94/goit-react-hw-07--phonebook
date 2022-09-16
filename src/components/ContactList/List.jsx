@@ -2,6 +2,7 @@ import React from 'react';
 import { ContactsList} from './contactList.styled';
 import {ContactListItem} from './ListItem';
 import { useSelector } from 'react-redux';
+// import { operations, selectors } from '../../../redux/index-export';
 
 export const ContactList = (/*{ contacts, onDeleteContact }*/) => {
   const contacts = useSelector(state => state.contacts);
